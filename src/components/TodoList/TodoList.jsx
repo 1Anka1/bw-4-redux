@@ -1,10 +1,13 @@
 import { useSelector } from "react-redux";
-import { Grid, GridItem, Todo } from "components";
+import { Grid, GridItem, Todo, Text } from "components";
+
 
 export const TodoList = () => {
-    const todos = useSelector(state => state.todos);
+  const todos = useSelector(state => state.todos);
+  
 
-    return (
+  return (
+      <>
     <Grid>
               {todos.length > 0 &&
                 todos.map((todo, index) => (
@@ -13,11 +16,14 @@ export const TodoList = () => {
                       id={todo.id}
                       text={todo.text}
                       counter={index + 1}
-                      // onClick={deleteTodo}
                     />
                   </GridItem>
                 ))}
-            </Grid> 
+      </Grid> 
+      {todos.length === 0 && (
+              <Text textAlign="center">There are no any todos ... </Text>
+      )}
+      </>
     )
 }
 
