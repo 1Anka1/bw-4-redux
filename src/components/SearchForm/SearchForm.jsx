@@ -6,10 +6,9 @@ import { useState } from 'react';
 import { addTodo } from 'redux/todo-slice';
 
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { nanoid } from 'nanoid';
 
-export const SearchForm = ({ onSubmit }) => {
+export const SearchForm = () => {
   const dispatch = useDispatch();
 
   const [query, setQuery] = useState('');
