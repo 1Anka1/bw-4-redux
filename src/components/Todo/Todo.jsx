@@ -5,12 +5,13 @@ import { useDispatch } from 'react-redux';
 import { removeTodo } from 'redux/todo-slice';
 
 export const Todo = ({ text, counter, id }) => {
-
   const dispatch = useDispatch();
 
   const deleteTodo = () => {
-    dispatch(removeTodo(id));
-  }
+    const removeAction = removeTodo(id);
+    console.log('removeAction', removeAction);
+    dispatch(removeAction);
+  };
   return (
     <>
       <TodoWrapper>
